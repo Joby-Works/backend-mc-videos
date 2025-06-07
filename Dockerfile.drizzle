@@ -1,0 +1,11 @@
+FROM node:latest
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY drizzle.config.ts ./
+RUN yarn add -D drizzle-orm
+RUN yarn add -D drizzle-kit 
+RUN yarn add -D pg
+
+EXPOSE 5000
